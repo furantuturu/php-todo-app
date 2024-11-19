@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+@font-face {
+    font-family: Night-Pumpkind;
+    src: url('../fonts/NightPumpkind-1GpGv.ttf');
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+:root {
+    --login-bg: url('../images/loginbg.gif');
+    --register-bg: url('../images/registerbg.gif');
+    --home-bg: url('../images/homebg.gif')
+}
+
+.bg-design {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.login-bg {
+    background-image: var(--login-bg);
+}
+
+.register-bg {
+    background-image: var(--register-bg);
+}
+
+.home-bg {
+    background-image: var(--home-bg);
+}
