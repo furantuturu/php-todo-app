@@ -2,5 +2,6 @@
 
 return view('index.views.php', [
     'title' => "NightShade",
-    'bg' => 'home-bg'
+    'bg' => 'home-bg',
+    'bodyLayout' => 'center-body-layout-pos'
 ]);
