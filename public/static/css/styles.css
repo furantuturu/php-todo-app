@@ -13,12 +13,33 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    text-decoration: none;
 }
 
 :root {
+    /*== Homepage var ==*/
+    --home-bg: url('../images/homebg.gif');
+    --grad-0: #4d46a0;
+    --grad-50: #4f5cc4;
+    --grad-100: #5375f7;
+    --txt-shdw: #000000;
+    --txt-clr-desc: #909bf1;
+    --btn-login-clr: #7b88e8;
+    --btn-login-clr-hov: #b3baf2;
+    --btn-regis-clr: #8a9ff5;
+    --btn-regis-clr-hov: #c0cbf5;
+
+    /*== Login page var ==*/
     --login-bg: url('../images/loginbg.gif');
+    --cont-bg: #000014ad;
+    --login-input-bg: #000014;
+    --login-border-clr: #9540d6;
+    --login-outline-clr: #b04afe;
+    --login-btn-bg: #9540d6;
+    --login-btn-bg-hov: #c588f4;
+
+    /*== Register page var ==*/
     --register-bg: url('../images/registerbg.gif');
-    --home-bg: url('../images/homebg.gif')
 }
 
 .bg-design {
@@ -38,4 +59,159 @@
 
 .home-bg {
     background-image: var(--home-bg);
+}
+
+.center-body-layout-pos {
+    align-content: center;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: Quicksand, Arial, sans-serif;
+    color: white;
+}
+
+/*== Homepage styles ==*/
+.home-cont {
+    text-align: center;
+    align-content: center;
+
+    a {
+        outline: none;
+        color: white;
+        font-family: Quicksand, Arial, sans-serif;
+        width: 100%;
+        padding: 1em;
+        border-radius: 9999px;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: all .1s ease-in;
+    }
+
+    .title {
+        font-family: Night-Pumpkind, cursive;
+        font-size: clamp(5rem, 20vw, 15rem);
+        background: linear-gradient(0deg, var(--grad-0) 0%, var(--grad-50) 50%, var(--grad-100) 100%);
+        color: transparent;
+        background-clip: text;
+        filter: drop-shadow(0px 0px 6px var(--txt-shdw));
+    }
+
+    .desc {
+        font-weight: 600;
+        font-size: clamp(1.5rem, 2.5vw, 4rem);
+        color: var(--txt-clr-desc);
+        font-style: italic;
+    }
+
+    .user-admission-btns-cont {
+        max-width: 56vw;
+        margin: 4rem auto 0;
+        display: flex;
+        gap: 1.2rem;
+        container-type: inline-size;
+
+        .login-btn {
+            background-color: var(--btn-login-clr);
+
+            &:hover,
+            &:focus {
+                background-color: var(--btn-login-clr-hov);
+                color: black;
+            }
+        }
+
+        .register-btn {
+            background-color: var(--btn-regis-clr);
+
+            &:hover,
+            &:focus {
+                background-color: var(--btn-regis-clr-hov);
+                color: black;
+            }
+        }
+    }
+
+    @media screen and (max-width: 550px) {
+        .user-admission-btns-cont {
+            flex-direction: column;
+        }
+    }
+}
+
+/*== Login page styles ==*/
+.login-cont {
+    width: 40vw;
+    min-width: 400px;
+    margin: 0 auto;
+    background-color: var(--cont-bg);
+    padding: 3.5rem;
+    border-radius: .7rem;
+    border: 2px solid var(--login-border-clr);
+
+    h1 {
+        text-align: center;
+        font-family: "Sour Gummy", Arial, sans-serif;
+        font-size: 3rem;
+        margin-block-end: 1em;
+    }
+
+    h1,
+    label,
+    input {
+        color: white;
+        font-family: Quicksand, sans-serif;
+    }
+
+    label {
+        display: block;
+        margin-block: .8rem;
+        font-size: 1.2rem;
+    }
+
+    input {
+        width: 100%;
+        padding: .7rem 1.6rem;
+        border-radius: .6rem .9rem .6rem .9rem;
+        font-size: 1rem;
+        background-color: var(--login-input-bg);
+        border: 1px solid var(--login-border-clr);
+
+        &:focus,
+        &:focus-visible {
+            outline: 2px solid var(--login-outline-clr);
+        }
+    }
+
+    button {
+        width: 80%;
+        padding: 1em;
+        border-radius: 9999px;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: all .1s ease-in;
+    }
+
+    .input-cont {
+        margin-block-end: 2rem;
+
+    }
+
+    .submit-btn {
+        text-align: center;
+
+        button {
+            background-color: var(--login-btn-bg);
+
+            &:hover,
+            &:focus {
+                background-color: var(--login-btn-bg-hov);
+                color: black;
+            }
+        }
+    }
+
+
 }
