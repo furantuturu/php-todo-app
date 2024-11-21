@@ -15,3 +15,13 @@ function view(string $viewPath, $attr = []) {
     extract($attr);
     require "views/{$viewPath}";
 }
+
+function getDatabaseClass() {
+    $dsnData = require 'dbData.php';
+
+    return new Classes\Database($dsnData, $_ENV['username'], $_ENV['password']);
+}
+
+function old(string $key) {
+    return Classes\Session::get('_old')[$key] ?? '';
+} 
