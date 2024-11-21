@@ -31,7 +31,7 @@
 
     /*== Login page var ==*/
     --login-bg: url('../images/loginbg.gif');
-    --cont-bg: #000014ad;
+    --login-cont-bg: #000014ad;
     --login-input-bg: #000014;
     --login-border-clr: #9540d6;
     --login-outline-clr: #b04afe;
@@ -40,6 +40,12 @@
 
     /*== Register page var ==*/
     --register-bg: url('../images/registerbg.gif');
+    --register-cont-bg: #101744ad;
+    --register-input-bg: #101744;
+    --register-border-clr: #3d5cad;
+    --register-outline-clr: #537fed;
+    --register-btn-bg: #12494B;
+    --register-btn-bg-hov: #4ddfe4;
 }
 
 .bg-design {
@@ -92,14 +98,15 @@ button {
 
     .title {
         font-family: Night-Pumpkind, cursive;
-        font-size: clamp(5rem, 20vw, 15rem);
+        font-size: clamp(5rem, 20vw, 14rem);
         background: linear-gradient(0deg, var(--grad-0) 0%, var(--grad-50) 50%, var(--grad-100) 100%);
         color: transparent;
         background-clip: text;
-        filter: drop-shadow(0px 0px 6px var(--txt-shdw));
+        filter: drop-shadow(0px 0px 5px var(--txt-shdw));
     }
 
     .desc {
+        font-family: Quicksand, Arial, sans-serif;
         font-weight: 600;
         font-size: clamp(1.5rem, 2.5vw, 4rem);
         color: var(--txt-clr-desc);
@@ -141,26 +148,26 @@ button {
     }
 }
 
-/*== Login page styles ==*/
-.login-cont {
+/*== User admission content default styles ==*/
+.login-cont,
+.register-cont {
     width: 40vw;
     min-width: 400px;
     margin: 0 auto;
-    background-color: var(--cont-bg);
-    padding: 3.5rem;
+    padding: 2.5rem 3.5rem;
     border-radius: .7rem;
-    border: 2px solid var(--login-border-clr);
 
     h1 {
         text-align: center;
         font-family: "Sour Gummy", Arial, sans-serif;
-        font-size: 3rem;
+        font-size: 2.5rem;
         margin-block-end: 1em;
     }
 
     h1,
     label,
-    input {
+    input,
+    a {
         color: white;
         font-family: Quicksand, sans-serif;
     }
@@ -213,5 +220,79 @@ button {
         }
     }
 
+    .page-links {
+        margin-block-start: 1.5rem;
+        text-align: center;
 
+        a:first-child {
+            margin-inline-end: 1.5rem;
+        }
+
+        a {
+            transition: all .1s ease;
+            padding: .2em;
+
+            &:hover {
+                border-bottom: 1px solid white;
+            }
+        }
+    }
+
+}
+
+/*== Login page styles ==*/
+.login-cont {
+    background-color: var(--login-cont-bg);
+    border: 2px solid var(--login-border-clr);
+
+    input {
+        background-color: var(--login-input-bg);
+        border: 1px solid var(--login-border-clr);
+
+        &:focus,
+        &:focus-visible {
+            outline: 2px solid var(--login-outline-clr);
+        }
+    }
+
+    .submit-btn {
+        button {
+            background-color: var(--login-btn-bg);
+
+            &:hover,
+            &:focus {
+                background-color: var(--login-btn-bg-hov);
+                color: black;
+            }
+        }
+    }
+}
+
+/*== Login page styles ==*/
+.register-cont {
+    background-color: var(--register-cont-bg);
+    border: 2px solid var(--register-border-clr);
+    ;
+
+    input {
+        background-color: var(--register-input-bg);
+        border: 1px solid var(--register-border-clr);
+
+        &:focus,
+        &:focus-visible {
+            outline: 2px solid var(--register-outline-clr);
+        }
+    }
+
+    .submit-btn {
+        button {
+            background-color: var(--register-btn-bg);
+
+            &:hover,
+            &:focus {
+                background-color: var(--register-btn-bg-hov);
+                color: black;
+            }
+        }
+    }
 }
