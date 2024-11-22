@@ -19,9 +19,9 @@ function view(string $viewPath, $attr = []) {
 function getDatabaseClass() {
     $dsnData = require 'dbData.php';
 
-    return new Classes\Database($dsnData, $_ENV['username'], $_ENV['password']);
+    return new Classes\Database($dsnData, $_ENV['USERNAME'], $_ENV['PASSWORD']);
 }
 
 function old(string $key) {
-    return Classes\Session::get('_old')[$key] ?? '';
+    return Classes\Session::get($key) ?? '';
 } 
