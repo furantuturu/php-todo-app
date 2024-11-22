@@ -10,14 +10,18 @@ class Session
     public static function flash(string $key, mixed $value) {
         $_SESSION['_flash'][$key] = $value;
     }
+    public static function oldsess(string $key, mixed $value) {
+        $_SESSION['_old'][$key] = $value;
+    }
     public static function unflash() {
+        unset($_SESSION['_old']);
         unset($_SESSION['_flash']);
     }
     public static function has(string $key) {
         return (bool) static::get($key);
     }
     public static function get(string $key) {
-        return $_SESSION['_flash'][$key] ?? $_SESSION[$key] ?? '';
+        return $_SESSION['_old'][$key] ?? $_SESSION['_flash'][$key] ?? $_SESSION[$key] ?? '';
     }
     public static function destroy() {
         $_SESSION = [];
