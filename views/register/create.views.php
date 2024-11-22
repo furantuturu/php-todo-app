@@ -1,14 +1,22 @@
 <?php require ROOT . 'views/partials/head.php' ?>
 <div class="register-cont">
     <h1>Register~</h1>
-    <form class="register-form" method="post">
+    <form action="/register" class="register-form" method="post">
         <div class="input-cont">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+            <input class="<?= $emailError[0] ?>" type="email" id="email" name="email" value="<?= old('_email') ?>"
+                required placeholder="Please put a valid email address" />
+            <?php if (isset($_SESSION['_flash']['email'])): ?>
+            <small class="error"><?= $emailError[1] ?></small>
+            <?php endif; ?>
         </div>
         <div class="input-cont">
             <label for="password">Password</label>
-            <input type="password" id="password" name="pwd" required>
+            <input class="<?= $passwordError[0] ?>" type="password" id="password" name="pwd" required
+                placeholder="Password must be 8 characters more" />
+            <?php if (isset($_SESSION['_flash']['password'])): ?>
+            <small class="error"><?= $passwordError[1] ?></small>
+            <?php endif; ?>
         </div>
         <div class="submit-btn">
             <button type="submit">Register</button>
