@@ -296,3 +296,21 @@ button {
         }
     }
 }
+
+/*== Validation design ==*/
+small {
+    font-family: Quicksand, sans-serif;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: lightgreen;
+}
+
+.emailError,
+.passwordError {
+    border: 1px solid red !important;
+}
