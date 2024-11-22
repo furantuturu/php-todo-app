@@ -29,7 +29,7 @@ class Validator
             Session::flash('email', 'Please input a valid email.');
         }
         if (static::sameEmail($email)) {
-            Session::flash('email', 'This email is already registered');
+            Session::flash('email', 'This email is already registered.');
         }
 
         return Session::has('_flash');

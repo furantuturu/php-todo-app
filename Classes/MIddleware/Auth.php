@@ -5,7 +5,7 @@ namespace Classes\Middleware;
 class Auth
 {
     public static function handle() {
-        if(empty($_SESSION['user'])) {
+        if(empty($_SESSION['auth_user'])) {
             redirect('/');
         }
     }
