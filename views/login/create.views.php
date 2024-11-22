@@ -1,14 +1,24 @@
 <?php require ROOT . 'views/partials/head.php' ?>
 <div class="login-cont">
     <h1>Login~</h1>
-    <form class="login-form" method="post">
+    <?php if (isset($_SESSION['_flash']['success'])): ?>
+    <small class="success"><?= $registerSuccess ?></small>
+    <?php endif; ?>
+    <form action="/login" class="login-form" method="post">
         <div class="input-cont">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+            <input class="<?= $emailError[0] ?>" type="email" id="email" name="email" value="<?= old('_email') ?>"
+                required />
+            <?php if (isset($_SESSION['_flash']['email'])): ?>
+            <small class="error"><?= $emailError[1] ?></small>
+            <?php endif; ?>
         </div>
         <div class="input-cont">
             <label for="password">Password</label>
-            <input type="password" id="password" name="pwd" required>
+            <input class="<?= $passwordError[0] ?>" type="password" id="password" name="pwd" required />
+            <?php if (isset($_SESSION['_flash']['password'])): ?>
+            <small class="error"><?= $passwordError[1] ?></small>
+            <?php endif; ?>
         </div>
         <div class="submit-btn">
             <button type="submit">Login</button>
