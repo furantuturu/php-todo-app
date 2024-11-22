@@ -2,6 +2,6 @@
 
 return [
     'host' => $_ENV['HOST'],
-    'post' => $_ENV['PORT'],
+    'port' => $_ENV['PORT'],
     'dbname' => $_ENV['DBNAME']
 ];
