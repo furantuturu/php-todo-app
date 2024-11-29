@@ -9,7 +9,7 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com/; font-src 'self' https://fonts.gstatic.com/">
     <link rel="stylesheet" href="static/css/styles.css">
-
+    <script src="static/js/index.js" defer></script>
 </head>
 
 <body class="bg-design <?= $bg ?> <?= $bodyLayout ?>">
