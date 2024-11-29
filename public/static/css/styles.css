@@ -79,10 +79,20 @@ button {
     color: white;
 }
 
+.title {
+    font-family: Night-Pumpkind, cursive;
+    font-size: clamp(5rem, 20vw, 14rem);
+    background: linear-gradient(0deg, var(--grad-0) 0%, var(--grad-50) 50%, var(--grad-100) 100%);
+    color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0px 0px 5px var(--txt-shdw));
+}
+
 /*== Homepage styles ==*/
 .home-cont {
     text-align: center;
     align-content: center;
+    animation: header-anim 1s cubic-bezier(0.32,-0.03, 0.52, 1.5) forwards;
 
     a {
         outline: none;
@@ -94,15 +104,6 @@ button {
         font-size: 1rem;
         font-weight: 500;
         transition: all .1s ease-in;
-    }
-
-    .title {
-        font-family: Night-Pumpkind, cursive;
-        font-size: clamp(5rem, 20vw, 14rem);
-        background: linear-gradient(0deg, var(--grad-0) 0%, var(--grad-50) 50%, var(--grad-100) 100%);
-        color: transparent;
-        background-clip: text;
-        filter: drop-shadow(0px 0px 5px var(--txt-shdw));
     }
 
     .desc {
@@ -156,6 +157,7 @@ button {
     margin: 0 auto;
     padding: 2.5rem 3.5rem;
     border-radius: .7rem;
+    animation: opac0to1 727ms ease forwards;
 
     h1 {
         text-align: center;
@@ -202,12 +204,20 @@ button {
     }
 
     .input-cont {
-        margin-block-end: 2rem;
+        position: relative;
 
+        .eye {
+            position: absolute;
+            width: 1.5rem;
+            top: 60%;
+            right: 20px;
+            cursor: pointer;
+        }
     }
 
     .submit-btn {
         text-align: center;
+        margin-block-start: 2rem;
 
         button {
             background-color: var(--login-btn-bg);
@@ -313,4 +323,41 @@ small {
 .emailError,
 .passwordError {
     border: 1px solid red !important;
+}
+
+/*== todo page design ==*/
+.todo-nav {
+    padding: 1rem 1.5rem;
+    height: unset;
+    border-bottom-left-radius: .8rem;
+    border-bottom-right-radius: .8rem;
+
+    .home-link {
+        display: inline-block;
+        
+        .todo-nav-title {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+/*== animations ==*/
+@keyframes header-anim {
+    from {
+        opacity: 0;
+        transform: translateY(-300px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes opac0to1 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
