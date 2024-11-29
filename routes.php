@@ -13,5 +13,5 @@ $router->post('/register', 'register/store.php');
 //* Logout
 $router->delete('/logout', 'logout.php')->only('auth');
 
-//* ToDo
+//* main page
 $router->get('/todo', 'todo/index.php')->only('auth');
