@@ -1,5 +1,7 @@
 <?php
 
 return view('todo/index.views.php', [
-    'title' => 'NightShade | ToDo'
+    'title' => 'NightShade | ToDo',
+    'bg' => 'todo-bg',
+    'bodyLayout' => ''
 ]);
