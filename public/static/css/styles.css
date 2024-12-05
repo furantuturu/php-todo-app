@@ -51,6 +51,10 @@
     --todo-bg: url('../images/todobg.gif');
 }
 
+body {
+    font-family: Quicksand, Arial, sans-serif;
+}
+
 .bg-design {
     background-repeat: no-repeat;
     background-position: center;
@@ -79,10 +83,10 @@
 }
 
 button {
+    font-family: Quicksand, Arial, sans-serif;
     border: none;
     outline: none;
     cursor: pointer;
-    font-family: Quicksand, Arial, sans-serif;
     color: white;
 }
 
@@ -95,6 +99,10 @@ button {
     filter: drop-shadow(0px 0px 5px var(--txt-shdw));
 }
 
+dialog {
+    margin: auto;
+}
+
 /*== Homepage styles ==*/
 .home-cont {
     text-align: center;
@@ -104,7 +112,6 @@ button {
     a {
         outline: none;
         color: white;
-        font-family: Quicksand, Arial, sans-serif;
         width: 100%;
         padding: 1em;
         border-radius: 9999px;
@@ -114,7 +121,6 @@ button {
     }
 
     .desc {
-        font-family: Quicksand, Arial, sans-serif;
         font-weight: 600;
         font-size: clamp(1.5rem, 2.5vw, 4rem);
         color: var(--txt-clr-desc);
@@ -178,7 +184,6 @@ button {
     input,
     a {
         color: white;
-        font-family: Quicksand, sans-serif;
     }
 
     label {
@@ -194,6 +199,7 @@ button {
         font-size: 1rem;
         background-color: var(--login-input-bg);
         border: 1px solid var(--login-border-clr);
+        font-family: Quicksand, Arial, sans-serif;
 
         &:focus,
         &:focus-visible {
@@ -315,9 +321,7 @@ button {
 }
 
 /*== Validation design ==*/
-small {
-    font-family: Quicksand, sans-serif;
-}
+
 
 .error {
     color: red;
@@ -338,7 +342,7 @@ small {
     height: unset;
     border-bottom-left-radius: .8rem;
     border-bottom-right-radius: .8rem;
-    background: linear-gradient(180deg, rgb(17, 17, 17) 0%, rgba(83, 117, 247, 0) 100%);
+    background: linear-gradient(180deg, #03030F 0%, rgba(83, 117, 247, 0) 100%);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -355,23 +359,47 @@ small {
 
     .avatar-nav {
         position: relative;
+        color: white;
 
         .avatar-dropdown {
             padding: 1rem;
             border-radius: 9999px;
+            background: transparent;
 
             .user {
-                width: 1rem;
+                width: 1.3rem;
+                fill: #4F5AC0;
             }
         }
 
         .dropdown-content {
+            display: none;
+            font-size: 1.2rem;
             position: absolute;
             right: 0;
-            width: 125px;
-            padding: .5rem;
+            padding: .8rem;
             border-radius: .5rem;
-            background-color: #ffffff;
+            background-color: #03030f87;
+            transform-origin: top right;
+            animation: dropdown-scale .3s ease-out forwards;
+
+            hr {
+                margin-block: .7rem;
+            }
+
+            form {
+                text-align: center;
+
+                .logout-btn {
+                    background: transparent;
+                    font-size: .9rem;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .active {
+            display: block;
         }
     }
 }
@@ -424,5 +452,15 @@ small {
 
     to {
         opacity: 1;
+    }
+}
+
+@keyframes dropdown-scale {
+    from {
+        transform: scale(0, 0);
+    }
+
+    to {
+        transform: scale(1, 1);
     }
 }
