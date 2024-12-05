@@ -14,9 +14,10 @@
         </button>
         <div class="dropdown-content">
             <h5><?= $_SESSION["auth_user"]["email"] ?></h5>
+            <hr>
             <form action="/logout" method="post">
                 <input type="hidden" name="_method" value="DELETE">
-                <button type="submit">Logout</button>
+                <button class="logout-btn" type="submit">Logout</button>
             </form>
         </div>
     </div>
@@ -24,7 +25,7 @@
 <div class="todo-cont">
     <div class="todo-block">
         <button class="add-todo-btn">
-            <svg class="plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#111111">
+            <svg class="plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                 <path
                     d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z" />
             </svg>
@@ -42,4 +43,5 @@
     <div class="todo-block"></div>
     <div class="todo-block"></div>
 </div>
+<script src="static/js/todoPage.js"></script>
 <?php require ROOT . 'views/partials/footer.php' ?>
