@@ -22,7 +22,19 @@
         </div>
     </div>
 </nav>
+<input type="color" name="colorpicker" id="colorpicker" />
 <div class="todo-cont">
+    <div class="todo-block"></div>
+    <div class="todo-block"></div>
+    <div class="todo-block"></div>
+    <div class="todo-block"></div>
+    <div class="todo-block"></div>
+    <div class="todo-block"></div>
+    <div class="todo-block"></div>
+    <div class="todo-block"></div>
+    <div class="todo-block"></div>
+    <div class="todo-block"></div>
+    <div class="todo-block"></div>
     <div class="todo-block">
         <button class="add-todo-btn">
             <svg class="plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -31,17 +43,6 @@
             </svg>
         </button>
     </div>
-    <div class="todo-block"></div>
-    <div class="todo-block"></div>
-    <div class="todo-block"></div>
-    <div class="todo-block"></div>
-    <div class="todo-block"></div>
-    <div class="todo-block"></div>
-    <div class="todo-block"></div>
-    <div class="todo-block"></div>
-    <div class="todo-block"></div>
-    <div class="todo-block"></div>
-    <div class="todo-block"></div>
 </div>
 <script src="static/js/todoPage.js"></script>
 <?php require ROOT . 'views/partials/footer.php' ?>
