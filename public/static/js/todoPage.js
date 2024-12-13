@@ -1,8 +1,8 @@
 const avatarDDBtn = document.querySelector('.avatar-dropdown')
-const addTodoBtn = document.querySelector('.add-todo-btn')
-const todoBlock = document.querySelector('.todo-block')
-const colorPicker = document.querySelector('#colorpicker')
 const todoBlocks = document.querySelectorAll('.todo-block')
+const colorPicker = document.querySelector('#colorpicker')
+const addTodoBtn = document.querySelector('.add-todo-btn')
+const addTodoModal = document.querySelector('.add-todo-modal')
 
 function openAvatarDropdown() {
     const DDContent = document.querySelector('.dropdown-content')
@@ -10,15 +10,8 @@ function openAvatarDropdown() {
     DDContent.classList.toggle('active')
 }
 
-function addTodoForm() {
-    const dialog = document.createElement('dialog')
-    const h1 = document.createElement('h1')
-    const p = document.createElement('p')
-    h1.textContent = "Hello World"
-    p.textContent = "hello world"
-    dialog.append(h1, p)
-    todoBlock.append(dialog)
-    dialog.showModal()
+function addTodoFormModal() {
+    addTodoModal.showModal()
 }
 
 function todoColorBgChange() {
@@ -28,5 +21,5 @@ function todoColorBgChange() {
 }
 
 avatarDDBtn.addEventListener('click', openAvatarDropdown)
-addTodoBtn.addEventListener('click', addTodoForm)
+addTodoBtn.addEventListener('click', addTodoFormModal)
 colorPicker.addEventListener('change', todoColorBgChange)
