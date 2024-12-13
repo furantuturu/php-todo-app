@@ -440,6 +440,16 @@ textarea {
     .todo-block {
         background-color: #fff;
         border-radius: .5rem;
+        display: flex;
+
+        .todo-title {
+            flex-grow: 1;
+        }
+
+        .todo-controls {
+            padding: 1rem 1.5rem;
+            background: linear-gradient(0deg, var(--grad-0) 0%, var(--grad-50) 50%, var(--grad-100) 100%);
+        }
     }
 
     .add-todo-block {
