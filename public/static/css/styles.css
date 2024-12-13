@@ -50,6 +50,8 @@
     /*== ToDo page var ==*/
     --todo-bg: url('../images/todobg.gif');
     --todo-cont-bg: #00000081;
+    --todo-border-clr: #dd2f85;
+    --todo-outline-clr: #f7409c;
 }
 
 body {
@@ -77,6 +79,7 @@ body {
 
 .todo-bg {
     background-image: var(--todo-bg);
+    background-attachment: fixed;
 }
 
 .center-body-layout-pos {
@@ -102,6 +105,14 @@ button {
 
 dialog {
     margin: auto;
+}
+
+input:not([type="color"]),
+textarea {
+    font-family: Quicksand, Arial, sans-serif;
+    font-size: 1rem;
+    border-radius: .6rem .9rem .6rem .9rem;
+    padding: .7rem 1.6rem;
 }
 
 /*== Homepage styles ==*/
@@ -198,9 +209,9 @@ dialog {
         padding: .7rem 1.6rem;
         border-radius: .6rem .9rem .6rem .9rem;
         font-size: 1rem;
+        font-family: Quicksand, Arial, sans-serif;
         background-color: var(--login-input-bg);
         border: 1px solid var(--login-border-clr);
-        font-family: Quicksand, Arial, sans-serif;
 
         &:focus,
         &:focus-visible {
@@ -339,6 +350,9 @@ dialog {
 
 /*== todo page design ==*/
 .todo-nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
     padding: 1rem 3rem;
     height: unset;
     border-bottom-left-radius: .8rem;
@@ -358,7 +372,14 @@ dialog {
         }
     }
 
+    #colorpicker {
+        background: linear-gradient(0deg, var(--grad-0) 0%, var(--grad-50) 50%, var(--grad-100) 100%);
+        border-radius: 9999px;
+        cursor: pointer;
+    }
+
     .avatar-nav {
+        display: inline-block;
         position: relative;
         color: white;
 
@@ -410,7 +431,7 @@ dialog {
     background-color: var(--todo-cont-bg);
     padding: 1rem;
     border-radius: .8rem;
-    margin: 0 auto;
+    margin: 8rem auto 0;
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -419,15 +440,94 @@ dialog {
     .todo-block {
         background-color: #fff;
         border-radius: .5rem;
+    }
+
+    .add-todo-block {
+        background-color: transparent;
         align-content: center;
         text-align: center;
 
         .add-todo-btn {
             padding: 1.42rem;
             border-radius: 9999px;
+            background-color: transparent;
 
             .plus {
-                width: 1.72rem;
+                width: 2.72rem;
+            }
+        }
+
+        .add-todo-modal {
+            padding: 1.5rem;
+            border: 2px solid var(--todo-border-clr);
+            border-radius: .6rem .9rem .6rem .9rem;
+            animation: opac0to1 727ms ease forwards;
+            background: #a21f678b;
+
+            h1 {
+                text-align: center;
+                font-family: "Sour Gummy", Arial, sans-serif;
+                font-size: 2.5rem;
+                margin-block-end: 1em;
+            }
+
+            h1,
+            input,
+            textarea {
+                color: white;
+            }
+
+            form {
+                div:not(:last-child) {
+                    margin-block-end: 1.5rem;
+                }
+            }
+
+            input,
+            textarea {
+                border: 1px solid var(--todo-border-clr);
+                background-color: #a21f67;
+
+                &:focus,
+                &:focus-visible {
+                    outline: 2px solid var(--todo-outline-clr);
+                }
+            }
+
+            input {
+                width: 100%;
+
+            }
+
+            textarea {
+                resize: none;
+            }
+
+            button {
+                padding: 1em;
+                border-radius: 9999px;
+                font-size: 1rem;
+                transition: all .1s ease-in;
+            }
+
+            .add-todo-btn {
+                background-color: #282653;
+
+                &:hover,
+                &:focus {
+                    background-color: #726eb3;
+                    color: black;
+                }
+            }
+
+            .cancel-todo-btn {
+                background-color: #dd2f60;
+
+                &:hover,
+                &:focus {
+                    background-color: #f280a0;
+                    color: black;
+                }
             }
         }
     }
