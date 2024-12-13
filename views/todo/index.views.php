@@ -26,7 +26,10 @@
     </div>
 </nav>
 <div class="todo-cont">
-    <div class="todo-block"></div>
+    <div class="todo-block">
+        <div class="todo-title"></div>
+        <div class="todo-controls"></div>
+    </div>
     <div class="todo-block"></div>
     <div class="todo-block"></div>
     <div class="todo-block"></div>
