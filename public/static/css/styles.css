@@ -52,6 +52,11 @@
     --todo-cont-bg: #00000081;
     --todo-border-clr: #dd2f85;
     --todo-outline-clr: #f7409c;
+    --add-todo-btn-bg: #282653;
+    --add-todo-btn-bg-hov: #726eb3;
+    --cancel-todo-btn-bg: #dd2f60;
+    --cancel-todo-btn-bg-hov: #f280a0;
+    --modal-bg: #a21f678b;
 }
 
 body {
@@ -80,6 +85,10 @@ body {
 .todo-bg {
     background-image: var(--todo-bg);
     background-attachment: fixed;
+}
+
+.todo-bg:has(.bg-design) {
+    height: unset;
 }
 
 .center-body-layout-pos {
@@ -344,7 +353,8 @@ textarea {
 }
 
 .emailError,
-.passwordError {
+.passwordError,
+.titleError {
     border: 1px solid red !important;
 }
 
@@ -444,11 +454,14 @@ textarea {
 
         .todo-title {
             flex-grow: 1;
+            align-content: center;
+            text-align: center;
         }
 
         .todo-controls {
             padding: 1rem 1.5rem;
             background: linear-gradient(0deg, var(--grad-0) 0%, var(--grad-50) 50%, var(--grad-100) 100%);
+            border-radius: 1.5rem .5rem .5rem 1.5rem;
         }
     }
 
@@ -472,7 +485,11 @@ textarea {
             border: 2px solid var(--todo-border-clr);
             border-radius: .6rem .9rem .6rem .9rem;
             animation: opac0to1 727ms ease forwards;
-            background: #a21f678b;
+            background: var(--modal-bg);
+
+            &::backdrop {
+                background: #11111169;
+            }
 
             h1 {
                 text-align: center;
@@ -521,21 +538,21 @@ textarea {
             }
 
             .add-todo-btn {
-                background-color: #282653;
+                background-color: var(--add-todo-btn-bg);
 
                 &:hover,
                 &:focus {
-                    background-color: #726eb3;
+                    background-color: var(--add-todo-btn-bg-hov);
                     color: black;
                 }
             }
 
             .cancel-todo-btn {
-                background-color: #dd2f60;
+                background-color: var(--cancel-todo-btn-bg);
 
                 &:hover,
                 &:focus {
-                    background-color: #f280a0;
+                    background-color: var(--cancel-todo-btn-bg-hov);
                     color: black;
                 }
             }
