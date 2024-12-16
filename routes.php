@@ -15,3 +15,4 @@ $router->delete('/logout', 'logout.php')->only('auth');
 
 //* main page
 $router->get('/todo', 'todo/index.php')->only('auth');
+$router->post('/todo', 'todo/store.php');
