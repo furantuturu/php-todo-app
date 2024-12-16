@@ -27,19 +27,11 @@
 </nav>
 <div class="todo-cont">
     <div class="todo-block">
-        <div class="todo-title"></div>
+        <div class="todo-title">
+            <h1></h1>
+        </div>
         <div class="todo-controls"></div>
     </div>
-    <div class="todo-block"></div>
-    <div class="todo-block"></div>
-    <div class="todo-block"></div>
-    <div class="todo-block"></div>
-    <div class="todo-block"></div>
-    <div class="todo-block"></div>
-    <div class="todo-block"></div>
-    <div class="todo-block"></div>
-    <div class="todo-block"></div>
-    <div class="todo-block"></div>
     <div class="add-todo-block">
         <button class="add-todo-btn">
             <svg class="plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#ffffff">
@@ -49,12 +41,17 @@
         </button>
         <dialog class="add-todo-modal">
             <h1>Add ToDo~</h1>
-            <form action="" method="post">
+            <form action="/todo" method="post">
                 <div class="todo-title-input-cont">
-                    <input type="text" name="todo-title" placeholder="Title of your ToDo">
+                    <input class="<?= $titleError[0] ?>" type="text" name="todotitle" placeholder="Title of your ToDo"
+                        value="<?= old('title') ?>">
                 </div>
-                <div class="todo-desc-input-cont">
-                    <textarea name="todo-body" placeholder="Description of your ToDo" rows="6" cols="50"></textarea>
+                <?php if (isset($_SESSION['_flash']['title'])): ?>
+                <small class="error"><?= $titleError[1] ?></small>
+                <?php endif; ?>
+                <div class=" todo-desc-input-cont">
+                    <textarea name="tododesc" placeholder="Description of your ToDo" rows="6" cols="50"
+                        value="<?= old('desc') ?>"></textarea>
                 </div>
                 <div class="add-todo-btns">
                     <button class="add-todo-btn" type="submit">Add</button>
