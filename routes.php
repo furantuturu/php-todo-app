@@ -18,3 +18,4 @@ $router->get('/todo', 'todo/index.php')->only('auth');
 $router->post('/todo', 'todo/store.php');
 $router->put('/todo', 'todo/update.php');
 $router->delete('/todo', 'todo/delete.php');
+$router->put('/todocheck', 'todo/todocheck.php');
