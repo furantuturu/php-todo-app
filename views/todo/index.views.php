@@ -29,15 +29,21 @@
     <?php foreach($todos as $todo): ?>
     <div class="todo-block">
         <div class="todo-title">
-            <h1><?= $todo['title'] ?></h1>
+            <form action="/todocheck" method="post" class="title-form">
+                <input type="hidden" name="_method" value="PUT">
+                <input type="hidden" name="_id" value="<?= $todo['todo_id'] ?>">
+                <button class="title-btn" title="Click to mark ToDo done!">
+                    <h1 class="<?= $checked ?>"><?= $todo['title'] ?></h1>
+                </button>
+            </form>
         </div>
-        <div class="todo-controls">
+        <div class="todo-controls <?= $checked ?>">
             <div class="expand-cont">
                 <button class="control-btn expand-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#ffffff"><path d="M344 0L488 0c13.3 0 24 10.7 24 24l0 144c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-39-39-87 87c-9.4 9.4-24.6 9.4-33.9 0l-32-32c-9.4-9.4-9.4-24.6 0-33.9l87-87L327 41c-6.9-6.9-8.9-17.2-5.2-26.2S334.3 0 344 0zM168 512L24 512c-13.3 0-24-10.7-24-24L0 344c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2l39 39 87-87c9.4-9.4 24.6-9.4 33.9 0l32 32c9.4 9.4 9.4 24.6 0 33.9l-87 87 39 39c6.9 6.9 8.9 17.2 5.2 26.2s-12.5 14.8-22.2 14.8z"/></svg>
                 </button>
                 <dialog class="expand-todo-modal">
-                    <form action="" class="expand-form" method="dialog">
+                    <form class="expand-form" method="dialog">
                         <div class="todo-content">
                             <h1><?= $todo['title'] ?></h1>
                             <hr>
@@ -107,7 +113,7 @@
                     <?php endif; ?>
                 </div>
                 <div class=" todo-desc-input-cont">
-                    <textarea name="tododesc" placeholder="Description of your ToDo" rows="6" cols="50"
+                    <textarea name="tododesc" placeholder="Description of your ToDo (optional)" rows="6" cols="50"
                         value="<?= old('_desc') ?>"></textarea>
                 </div>
                 <div class="add-todo-btns">
