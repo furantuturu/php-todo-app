@@ -3,7 +3,7 @@
     <h1>Register~</h1>
     <form action="/register" class="register-form" method="post">
         <div class="input-cont">
-            <label for="email">Email</label>
+            <label for="email">Email*</label>
             <input class="<?= $emailError[0] ?>" type="email" id="email" name="email" value="<?= old('_email') ?>"
                 required placeholder="Please put a valid email address" />
         </div>
@@ -12,7 +12,7 @@
         <?php endif; ?>
         <br>
         <div class="input-cont">
-            <label for="password">Password</label>
+            <label for="password">Password*</label>
             <input class="<?= $passwordError[0] ?>" type="password" id="password" name="pwd" required
                 placeholder="Password must be 8 characters more" />
             <span class="eye">

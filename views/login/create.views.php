@@ -6,7 +6,7 @@
     <?php endif; ?>
     <form action="/login" class="login-form" method="post">
         <div class="input-cont">
-            <label for="email">Email</label>
+            <label for="email">Email*</label>
             <input class="<?= $emailError[0] ?>" type="email" id="email" name="email" value="<?= old('_email') ?>"
                 required />
         </div>
@@ -15,7 +15,7 @@
         <?php endif; ?>
         <br>
         <div class="input-cont">
-            <label for="password">Password</label>
+            <label for="password">Password*</label>
             <input class="<?= $passwordError[0] ?>" type="password" id="password" name="pwd" required />
             <span class="eye">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="#ffffff">
