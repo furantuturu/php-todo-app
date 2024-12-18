@@ -11,8 +11,10 @@ $router->get('/register', 'register/create.php')->only('guest');
 $router->post('/register', 'register/store.php');
 
 //* Logout
-$router->delete('/logout', 'logout.php')->only('auth');
+$router->delete('/logout', 'logout.php');
 
 //* main page
 $router->get('/todo', 'todo/index.php')->only('auth');
 $router->post('/todo', 'todo/store.php');
+$router->put('/todo', 'todo/update.php');
+$router->delete('/todo', 'todo/delete.php');
