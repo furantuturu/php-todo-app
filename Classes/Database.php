@@ -30,4 +30,7 @@ class Database
     public function get() {
         return $this->statement->fetch();
     }
+    public function getAll() {
+        return $this->statement->fetchAll();
+    }
 }
